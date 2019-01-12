@@ -19,8 +19,8 @@ export default abstract class OpBinary extends TokenType {
             const firstVal = parseFloat(first.value);
             const secondVal = parseFloat(second.value);
 
-            if (!firstVal || !secondVal) {
-                throw new Error(`invalid operands to ${this._name}`);
+            if (isNaN(firstVal) || isNaN(secondVal)) {
+                throw new Error(`invalid operands to ${this._name}, first: ${first}, second: ${second}`);
             }
 
             const result = this.apply(firstVal, secondVal);
