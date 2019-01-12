@@ -1,8 +1,8 @@
 {
-  "name": "learn-typescript",
+  "name": "post-calculator",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/bundle.js",
+  "main": "dist/main.js",
   "scripts": {
     "start": "node dist/main.js",
     "build": "gulp",
