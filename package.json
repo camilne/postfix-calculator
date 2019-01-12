@@ -5,6 +5,7 @@
   "main": "dist/bundle.js",
   "scripts": {
     "start": "node dist/main.js",
+    "build": "gulp",
     "watch": "gulp watch"
   },
   "author": "",
