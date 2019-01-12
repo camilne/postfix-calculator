@@ -1,0 +1,10 @@
+{
+    "include": [
+        "src/**/*.ts"
+    ],
+    "compilerOptions": {
+        "removeComments": true,
+        "target": "es2015",
+        "strict": true
+    }
+}
