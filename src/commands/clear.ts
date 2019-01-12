@@ -3,7 +3,7 @@ import TokenType from '../tokentype';
 
 export default class Clear extends TokenType {
     constructor() {
-        super('clear', /clear/);
+        super('clear', /^clear$/);
     }
 
     public execute(stack: Stack): void {

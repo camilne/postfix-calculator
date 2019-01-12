@@ -8,7 +8,7 @@ import TokenType from './tokentype';
 
 export default class TokenTypes {
     public static readonly VALUES = new Array<TokenType>();
-    public static readonly NUMBER = new NoOp('number', /[0-9]+/);
+    public static readonly NUMBER = new NoOp('number', /^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?$/);
     public static readonly OP_ADD = new OpAdd();
     public static readonly OP_SUB = new OpSub();
     public static readonly OP_MUL = new OpMul();
