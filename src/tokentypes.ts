@@ -5,6 +5,7 @@ import OpDiv from './commands/opdiv';
 import OpMod from './commands/opmod';
 import OpMul from './commands/opmul';
 import OpSub from './commands/opsub';
+import Pop from './commands/pop';
 import TokenType from './tokentype';
 
 export default class TokenTypes {
@@ -16,6 +17,7 @@ export default class TokenTypes {
     public static readonly OP_DIV = TokenTypes.c(OpDiv);
     public static readonly OP_MOD = TokenTypes.c(OpMod);
     public static readonly CLEAR  = TokenTypes.c(Clear);
+    public static readonly POP    = TokenTypes.c(Pop);
 
     private static c<T extends TokenType>(type: new () => T): T;
     private static c<T extends TokenType>(type: new (name: string, regex: RegExp) => T, name: string, regex: RegExp): T;

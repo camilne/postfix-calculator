@@ -54,6 +54,7 @@ Example:
 | - | subtract |
 | * | multiply |
 | / | divide |
+| % | mod (remainder) |
 
 Commands
 --------
@@ -63,3 +64,4 @@ Commands do not require input elements from the stack.
 | Command | Result |
 | --------|--------|
 | `clear` | Clears the stack |
+| `pop`   | Pop the top element from the stack |
