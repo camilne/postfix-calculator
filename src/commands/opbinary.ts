@@ -2,13 +2,14 @@ import Stack from '../stack';
 import Token from '../token';
 import TokenType from '../tokentype';
 import TokenTypes from '../tokentypes';
+import Variable from '../variable';
 
 export default abstract class OpBinary extends TokenType {
     protected constructor(name: string, regex: RegExp) {
         super(name, regex);
     }
 
-    public execute(stack: Stack): void {
+    public execute(stack: Stack, variables: Map<string, Variable>): void {
         stack.pop();
         if (stack.size() < 2) {
             console.error('underflow exception');
@@ -16,11 +17,11 @@ export default abstract class OpBinary extends TokenType {
             const second = stack.pop();
             const first = stack.pop();
 
-            const firstVal = parseFloat(first.value);
-            const secondVal = parseFloat(second.value);
+            const firstVal = Variable.resolve(first.value, variables);
+            const secondVal = Variable.resolve(second.value, variables);
 
-            if (isNaN(firstVal) || isNaN(secondVal)) {
-                throw new Error(`invalid operands to ${this._name}, first: ${first}, second: ${second}`);
+            if (firstVal === undefined || secondVal === undefined) {
+                return;
             }
 
             const result = this.apply(firstVal, secondVal);

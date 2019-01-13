@@ -1,4 +1,5 @@
 import Stack from './stack';
+import Variable from './variable';
 
 export default abstract class TokenType {
     protected constructor(protected readonly _name: string, private readonly _regex: RegExp) {
@@ -10,5 +11,5 @@ export default abstract class TokenType {
         return match ? match[0] : null;
     }
 
-    public abstract execute(stack: Stack): void;
+    public abstract execute(stack: Stack, variables: Map<string, Variable>): void;
 }

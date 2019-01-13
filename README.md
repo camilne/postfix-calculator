@@ -59,9 +59,31 @@ Example:
 Commands
 --------
 
-Commands do not require input elements from the stack.
+Commands do not add a result back onto the stack.
 
-| Command | Result |
-| --------|--------|
-| `clear` | Clears the stack |
-| `pop`   | Pop the top element from the stack |
+| Command | Inputs | Result |
+| --------|--------|--------|
+| `clear` | 0 | Clears the stack |
+| `pop`   | 0 | Pop the top element from the stack |
+| `def`   | 2 | Define a variable, with the identifier being the top-most element |
+
+Examples
+--------
+
+```
+=> 2 3 +
+5
+=> 3 x def
+5
+=> 2 x *
+6
+5
+=> -
+-1
+=> clear
+=> 4 5 + 3
+3
+9
+=> pop
+9
+```
