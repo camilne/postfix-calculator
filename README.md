@@ -67,13 +67,18 @@ Commands do not add a result back onto the stack.
 | `pop`   | 0 | Pop the top element from the stack |
 | `def`   | 2 | Define a variable, with the identifier being the top-most element |
 
+Variables
+---------
+
+Variables are defined with `<value> /<identifier> def`. Variables are evaulated immediately when their identifier is pushed to the stack.
+
 Examples
 --------
 
 ```
 => 2 3 +
 5
-=> 3 x def
+=> 3 /x def
 5
 => 2 x *
 6

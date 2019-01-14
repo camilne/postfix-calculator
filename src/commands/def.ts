@@ -1,5 +1,6 @@
 import Stack from '../stack';
 import TokenType from '../tokentype';
+import TokenTypes from '../tokentypes';
 import Variable from '../variable';
 
 export default class Def extends TokenType {
@@ -15,11 +16,17 @@ export default class Def extends TokenType {
             const identifier = stack.pop();
             const value = Variable.resolve(stack.pop().value, variables);
 
+            if (identifier.type !== TokenTypes.VAR_DECL) {
+                console.error('variable declaration needed for def');
+                return;
+            }
+
             if (value === undefined) {
                 return;
             }
 
-            const variable = new Variable(identifier.value, value);
+            // Remove the leading slash in the identifier declaration
+            const variable = new Variable(identifier.value.slice(1), value);
             variables.set(variable.name, variable);
         }
     }
