@@ -7,6 +7,7 @@ import OpMod from './commands/opmod';
 import OpMul from './commands/opmul';
 import OpSub from './commands/opsub';
 import Pop from './commands/pop';
+import Swap from './commands/swap';
 import VariableEval from './commands/vareval';
 import TokenType from './tokentype';
 
@@ -14,6 +15,7 @@ export default class TokenTypes {
     public static readonly VALUES = new Array<TokenType>();
     // NOTE: These need to be defined in the order they should be matched.
     public static readonly DEF    = TokenTypes.c(Def);
+    public static readonly SWAP   = TokenTypes.c(Swap);
     public static readonly OP_ADD = TokenTypes.c(OpAdd);
     public static readonly OP_SUB = TokenTypes.c(OpSub);
     public static readonly OP_MUL = TokenTypes.c(OpMul);

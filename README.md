@@ -65,6 +65,7 @@ Commands do not add a result back onto the stack.
 | --------|--------|--------|
 | `clear` | 0 | Clears the stack |
 | `pop`   | 0 | Pop the top element from the stack |
+| `swap`  | 0 | Swap the top two elements on the stack |
 | `def`   | 2 | Define a variable, with the identifier being the top-most element |
 
 Variables
